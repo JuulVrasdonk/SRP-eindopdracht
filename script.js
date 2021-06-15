@@ -192,7 +192,7 @@ const usptl = gsap.timeline({
     start: "center bottom",
     end: "center bottom-=100px",
     toggleActions: "restart none reverse none",
-    markers: true
+    // markers: true
   }
 })
 
