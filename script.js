@@ -47,9 +47,8 @@ gsap.to(".header", {
     // markers: true
   },
   overflow: "hidden"
-  
-
 })
+
 
 
 function logo() {
@@ -121,11 +120,24 @@ function heading() {
    return headingtl;
  }
 
+ function BGshade() {
+  const BGtl = gsap.timeline();
+  BGtl.from('.backgroundshade', {
+    y: 100,
+    opacity: 0,
+    ease: Power4.easeOut,
+    duration: 5
+  }) 
+  return BGtl;
+}
+
 const main = gsap.timeline()
   .add(logo())
   .add(hamburger(), '-=.6')
   .add(heading(), '-=.3')
-  .add(scroll(), '-=.6')
+  .add(BGshade(), '<')
+  .add(scroll(), '-=4')
+  
   
 
 
@@ -158,6 +170,7 @@ gsap.to(".headingpoints", {
 })
 
 
+
 const blurtl = gsap.timeline({
   scrollTrigger: {
     trigger: ".usp",
@@ -171,27 +184,31 @@ const blurtl = gsap.timeline({
 blurtl.to (".leftblob", {
   fill: "#FF0D64",
   duration: 2,
-  y: -200,
-  x: -200
+  y: -400,
+  x: -200,
+  scale: 3
 })
 .to (".rightblob", {
   fill: "#E59BFF",
   duration: 2,
-  y: -200,
-  x: 200
+  y: -400,
+  x: 200,
+  scale: 3
 }, "<")
 .to (".centerblob", {
   fill: "#FA00FF",
-  y: -200,
-  duration: 2
+  y: -400,
+  duration: 3
 }, "<")
+
+
 
 const usptl = gsap.timeline({
   scrollTrigger: {
     trigger: ".usp",
     start: "center bottom",
     end: "center bottom-=100px",
-    toggleActions: "restart none reverse none",
+    toggleActions: "restart none reverse none"
     // markers: true
   }
 })
@@ -213,3 +230,79 @@ usptl.from (".USPcontainer", {
   x: -30,
   stagger: .2
 })
+
+
+gsap.to(".colorgrid", {
+  scrollTrigger: {
+    trigger: ".colorgrid",
+    start: "center center",
+    end: "bottom+=2000px top",
+    pin: true,
+    // markers: true
+  }
+})
+
+gsap.from(".colorcar", {
+  scrollTrigger: {
+    trigger: ".colorgrid",
+    start: "center center",
+    end: "center bottom"
+  },
+  scale: 0,
+  ease: Bounce.easeOut,
+  stagger: .4
+})
+
+gsap.to (".textzoom", {
+  scrollTrigger: {
+    trigger: ".textzoom",
+    start: "bottom+=1000px center",
+    end: "bottom+=1000px top-=1000px",
+    scrub: true,
+    // markers: true
+  },
+  ease: "none",
+  scale: 500
+})
+
+
+function orderheading() {
+  const headingtl = gsap.timeline();
+  headingtl.from(".orderheading", {
+    y: 100,
+    opacity: 0
+  })
+  return headingtl;
+}
+
+function orderbutton() {
+  const preordertl = gsap.timeline();
+  preordertl.from(".preorder", {
+    y: 100,
+    opacity: 0
+  })
+  return preordertl;
+}
+
+function totop() {
+  const totoptl = gsap.timeline();
+  totoptl.from(".totop", {
+    y: 100,
+    opacity: 0
+  })
+  return totoptl;
+}
+
+const mainordertl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".order",
+    start: "center bottom",
+    end: "center center+=100px",
+    scrub: true,
+    // markers: true
+  }
+})
+.add(orderheading(),'1')
+.add(orderbutton())
+.add(totop(),'<.2')
+

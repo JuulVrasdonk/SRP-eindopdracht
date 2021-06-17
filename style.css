@@ -16,7 +16,7 @@ body {
 }
 
 body > svg{
-  width: 75%;
+  width: 100vw;
   position: fixed;
   top: 40vh;
   left: 50vw;
@@ -24,6 +24,7 @@ body > svg{
   z-index: -1;
   filter: blur(84px);
 }
+
 header {
     height: 100vh;
     position: relative;
@@ -163,3 +164,82 @@ main article:first-of-type a {
 main article:first-of-type a svg {
   height: .6em
 }
+article.color {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 50vh
+}
+main article:nth-child(2) ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 5em;
+  list-style-type: none;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 30em;
+  max-width: 90%;
+  margin: 0 5%;
+}
+
+main article:nth-child(2) ul li {
+  display: flex;
+  align-items: center;
+}
+
+main article:nth-child(2) ul li img {
+  width: 20em;
+}
+
+main article:nth-child(2) ul li h2 {
+  font-size: 3em;
+  text-align: center;
+}
+.textzoom {
+  position: relative;
+  z-index: 2;
+}
+article.order {
+  position: relative;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+article.order h2 {
+  color: #111111;
+  font-size: 3em;
+  width: 30%;
+  text-align: center;
+}
+
+article.order div {
+  margin-top: 3em;
+}
+
+article.order div a:first-of-type {
+  color: #477A9B;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 2em;
+}
+
+article.order div a:last-of-type {
+  color: #B0B0B0;
+  text-decoration: none;
+  font-weight: 600;
+}
+article.order div a svg {
+  height: 1em;
+  position: relative;
+  top: 2px;
+  margin-left: 4px;
+}
+
+
+
