@@ -6,6 +6,11 @@ h1, h2, h3, h4, h5, h6, p, a, button {
   font-family: 'Poppins', sans-serif;
   color: white
 }
+
+/* ******************** 
+  core css
+******************** */
+
 html {
     height: 100vh;
 }
@@ -202,12 +207,12 @@ article.order {
   position: relative;
   z-index: 999;
   height: 100vh;
-  width: 100vw;
   margin-top: 200vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 article.order h2 {
